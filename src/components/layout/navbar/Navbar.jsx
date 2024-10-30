@@ -1,27 +1,29 @@
 import { CartWidget } from "../../common/cartWidget/CartWidget";
 import "./navbar.css";
-
-export const Navbar = () => {
+import { Link } from "react-router-dom";
+export const Navbar = ({ darkMode }) => {
   return (
     <>
-      <div className="container-navbar">
-        <img
-          src="https://res.cloudinary.com/dymx8k9np/image/upload/v1728595841/Dise%C3%B1o_sin_t%C3%ADtulo-removebg-preview_xpxa3k.png"
-          alt="logo"
-          style={{
-            width: "100px",
-            height: "100px",
-          }}
-        />
-        <ul
-          style={{
-            display: "flex",
-            gap: "10px",
-          }}
-        >
-          <li>Todos los productos</li>
-          <li>Placard</li>
-          <li>Mesas</li>
+      <div
+        className={
+          darkMode ? "container-navbar-dark navbar" : "container-navbar navbar"
+        }
+      >
+        <Link to="/">
+          <img
+            src="https://res.cloudinary.com/dymx8k9np/image/upload/v1730238207/watch-classic-logo-icon-design-vector_elhhun.jpg"
+            alt="logo"
+            style={{
+              width: "100px",
+              height: "100px",
+            }}
+          />
+        </Link>
+        <ul style={{ display: "flex", gap: "20px" }}>
+          <Link to="/">Todo </Link>
+
+          <Link to={"/category/hombres"}>Hombres</Link>
+          <Link to={"/category/mujer"}>Mujer</Link>
         </ul>
 
         <CartWidget />
