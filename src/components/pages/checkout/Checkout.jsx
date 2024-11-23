@@ -1,4 +1,4 @@
-/**import { useState } from "react";
+import { useState } from "react";
 
 const Checkout = () => {
   const [userInfo, setUserInfo] = useState({
@@ -47,4 +47,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;**/
+export default Checkout;
